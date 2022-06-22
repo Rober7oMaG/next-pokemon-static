@@ -12,23 +12,13 @@ interface Props {
 const HomePage: NextPage<Props> = ({pokemons}) => {
   return (
     <Layout title='Pokemon List'>
-
-      <>
-        <Image
-          src='/img/banner.png'
-          alt='Banner image'
-          width={200}
-          height={150}
-        />
-
-        <Grid.Container gap={2} justify='flex-start'>
-          {
-            pokemons.map((pokemon) => (
-              <PokemonCard key={pokemon.id} pokemon={pokemon} />
-            ))
-          }
-        </Grid.Container>
-      </>
+      <Grid.Container gap={2} justify='flex-start'>
+        {
+          pokemons.map((pokemon) => (
+            <PokemonCard key={pokemon.id} pokemon={pokemon} />
+          ))
+        }
+      </Grid.Container>
     </Layout>
   );
 };
